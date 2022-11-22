@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Cotta';
+    src: url(../fonts/Cotta\ Free.otf);
+}
+
+@import './foundations/variables';
+
+p {
+    font-family: 'Cotta';
+    color: aquamarine;
+    font-size: 200px;
+}

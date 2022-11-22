@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Cotta";
+  src: url(../fonts/Cotta\ Free.otf);
+}
+p {
+  font-family: "Cotta";
+  color: aquamarine;
+  font-size: 200px;
+}/*# sourceMappingURL=main.css.map */
