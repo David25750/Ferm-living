@@ -15,4 +15,26 @@
             background-color: $grey;
             color: $black;
         }
+
+        &.-light{
+            background-color: $grey;
+            color: $green;
+            &:hover{
+                background-color: $green;
+                color: $grey;
+            }
+            &:active{
+                background-color: $grey;
+                color: $green;
+                border: 3px solid;
+                border-color: $green;
+            }
+        }
+        &.-border{
+            background-color: rgba(128,120,05,0);
+            color: $green;
+            &:hover{
+                border: 3px solid;
+                }
+        }
     }
