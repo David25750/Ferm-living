@@ -1,6 +1,18 @@
 
     .button{
-        color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
         border: 0;
-        width: 200px;
+        width: 250px;
+        background-color: $black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: $Content;
+        font-size: $sizecontent;
+        &:hover{
+            background-color: $brown;
+        }
+        &:active{
+            background-color: $grey;
+            color: $black;
+        }
     }
