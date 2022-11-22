@@ -7,5 +7,31 @@ $green: #5E6352;
 //Les polices
 
 $Title: 'Cotta';
+$Content: 'Poppins regular';
+$Contentlight: 'Poppins light';
+$Contentsemibold:'Poppins semibold' ;
+$Contentbold:'Poppins bold';
+$ContentlightItalic:'Poppins lightItalic';
+$ContentItalic:'Poppins regularItalic';
+$ContentsemiboldItalic:'Poppins semiboldItalic';
+$ContentboldItalic:'Poppins boldItalic';
 
-//
+
+//Taille de police
+
+$sizeH1: '60px';
+$sizeH2: '40px';
+$sizebigcontent:'26px';
+$sizecontent: '20px';
+$sizesmallcontent:'15px';
+$sizetitlemobile:'24px';
+$sizecontentmobile:'14px';
+$sizesmallcontent:'12px';
+
+//Tailles d'écrans
+
+$x-small:'575px';
+$small:'576px';
+$medium:'768px';
+$large:'992px';
+$x-large:'1200px';
