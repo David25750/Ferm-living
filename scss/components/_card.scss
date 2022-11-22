@@ -3,7 +3,7 @@
     flex-direction: column;
     height:500px;
     width:300px;
-    padding:100px;
+    margin:100px;
 
     &__item{
         
@@ -20,7 +20,7 @@
         
             h1{
                 color:$green;
-                font-family: $Contentsemibold;
+                font-family: $Contentbold;
                 font-size:$sizecontent;
                 margin:0;
             }
