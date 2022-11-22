@@ -1,9 +1,23 @@
-@font-face {
-    font-family: 'Cotta';
-    src: url(../fonts/Cotta\ Free.otf);
-}
+//foundations
 
+@import './foundations/fonts';
 @import './foundations/variables';
+@import './foundations/mixins';
+@import './foundations/functions';
+
+//components
+
+@import './components/footer';
+@import './components/header';
+
+//elements
+
+@import './elements/button';
+@import './elements/icons';
+
+//layout
+
+@import './layouts/layouts';
 
 p {
     font-family: 'Cotta';
