@@ -10,5 +10,16 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/scss/foundations/_fonts.scss";`,
+        additionalData: `@import "@/scss/foundations/_variables.scss";`,
+        additionalData: `@import "@/scss/foundations/_functions.scss";`,
+        additionalData: `@import "@/scss/foundations/_mixins.scss";`,
+        additionalData: `@import "@/scss/foundations/_normalize.scss";`,
+      }
+    }
   }
 })
