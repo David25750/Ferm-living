@@ -1,0 +1,19 @@
+.menuCatalogue{
+    height:100px;
+    background-color: $brown;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    
+    &__link{
+        color:$grey;
+        text-decoration: none;
+        margin:20px;
+        font-family: $Content;
+        font-size:$sizecontent;
+    }
+
+    &__link:hover{
+        text-decoration: underline 4px;
+    }
+}
