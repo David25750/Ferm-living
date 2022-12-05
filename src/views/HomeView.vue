@@ -5,9 +5,8 @@
 import Banner from "../components/Banner.vue";
 import Card from "../components/Card.vue";
 import MenuCatalogue from "../components/MenuCatalogue.vue";
-import MenuCatalogue from "../components/MenuCatalogue.vue";
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
+import Headerr from "../components/Header.vue";
+import Footerr from "../components/Footer.vue";
 
 // Elements
 import Button1 from "../components/elements/Button.vue";
@@ -17,13 +16,18 @@ import Button1 from "../components/elements/Button.vue";
       Banner,
       Card,
       MenuCatalogue,
-      Header,
-      Footer,
+      Headerr,
+      Footerr,
       Button1
     },
   };
 </script>
 
 <template>
+  <Headerr />
   <Banner />
+  <Card />
+  <Button1 />
+  <MenuCatalogue />
+  <Footerr />
 </template>
