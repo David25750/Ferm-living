@@ -1,17 +1,29 @@
 <script>
 
-  import MyTitle from "./../components/MyTitle.vue";
+//Components
+
+import Banner from "../components/Banner.vue";
+import Card from "../components/Card.vue";
+import MenuCatalogue from "../components/MenuCatalogue.vue";
+import MenuCatalogue from "../components/MenuCatalogue.vue";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+
+// Elements
+import Button1 from "../components/elements/Button.vue";
+
   export default {
     components: {
-      MyTitle,
+      Banner,
+      Card,
+      MenuCatalogue,
+      Header,
+      Footer,
+      Button1
     },
   };
 </script>
 
 <template>
-  <main>
-    <MyTitle size="tiny" type="H2" label="Petit Titre H2"></MyTitle>
-    <MyTitle size="big" label="Grand Titre H1"></MyTitle>
-    
-  </main>
+  <Banner />
 </template>

@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <template>
     <div class="banner">
         <ul class="banner__list">
