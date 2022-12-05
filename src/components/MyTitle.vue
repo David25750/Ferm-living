@@ -19,7 +19,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-@import "./../scss/foundations/variables.scss";
+//@import "./../scss/foundations/variables.scss";
 
 .title{
     font-family:Arial, Helvetica, sans-serif;
