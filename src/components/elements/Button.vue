@@ -1,0 +1,58 @@
+<script>
+</script>
+<template>
+    <button class="button">
+            Click
+        </button>
+        
+        <button class="button -light">
+            Customize
+        </button>
+
+        <button class="button -border">
+            See more
+        </button>
+</template>
+<style lang="scss" scoped>
+
+.button{
+        color: rgb(255, 255, 255);
+        border: 0;
+        width: 250px;
+        background-color: $black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: $Content;
+        font-size: $sizecontent;
+        &:hover{
+            background-color: $brown;
+        }
+        &:active{
+            background-color: $grey;
+            color: $black;
+        }
+
+        &.-light{
+            background-color: $grey;
+            color: $green;
+            &:hover{
+                background-color: $green;
+                color: $grey;
+            }
+            &:active{
+                background-color: $grey;
+                color: $green;
+                border: 3px solid;
+                border-color: $green;
+            }
+        }
+        &.-border{
+            background-color: rgba(128,120,05,0);
+            color: $green;
+            &:hover{
+                border: 3px solid;
+                }
+        }
+    }
+
+</style>

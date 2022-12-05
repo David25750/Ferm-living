@@ -1,20 +1,33 @@
 <script>
-  import MyButton from "./../components/MyButton.vue";
-  import MyTitle from "./../components/MyTitle.vue";
+
+//Components
+
+import Banner from "../components/Banner.vue";
+import Card from "../components/Card.vue";
+import MenuCatalogue from "../components/MenuCatalogue.vue";
+import Headerr from "../components/Header.vue";
+import Footerr from "../components/Footer.vue";
+
+// Elements
+import Button1 from "../components/elements/Button.vue";
+
   export default {
     components: {
-      MyButton,
-      MyTitle,
+      Banner,
+      Card,
+      MenuCatalogue,
+      Headerr,
+      Footerr,
+      Button1
     },
   };
 </script>
 
 <template>
-  <main>
-    <MyTitle size="tiny" type="H2" label="Petit Titre H2"></MyTitle>
-    <MyTitle size="big" label="Grand Titre H1"></MyTitle>
-    
-    <MyButton label="Cliquez la svp" href="/lien"></MyButton>
-    <MyButton label="Valider le formulaire" type="secondary"></MyButton>
-  </main>
+  <Headerr />
+  <Banner />
+  <Card />
+  <Button1 />
+  <MenuCatalogue />
+  <Footerr />
 </template>
