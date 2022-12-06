@@ -16,13 +16,29 @@ import Button1 from "../components/elements/Button.vue";
       Banner,
       Card,
       MenuCatalogue,
+      Headerr,
+      Footerr,
       Button1
     },
   };
 </script>
 
 <template>
-
+  <Headerr />
+  <div class="Home">
+    <div class="Home__text">
+      <h1>Ferm Living</h1>
+      <p>At ferm LIVING, we celebrate the contrasts in life.
+      We want people to feel confident in the choices they make as they create space to live more sustainably.</p>
+    </div>
+  </div>
+  <!--
+    <Banner />
+  <Card />
+  <Button1 />
+  <MenuCatalogue />
+  <Footerr />
+  -->
 </template>
 
 <style lang="scss" scoped>
