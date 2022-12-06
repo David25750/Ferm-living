@@ -16,20 +16,16 @@ import Button1 from "../components/elements/Button.vue";
       Banner,
       Card,
       MenuCatalogue,
-      Headerr,
-      Footerr,
       Button1
     },
   };
 </script>
 
 <template>
-  <Headerr />
   <Banner />
   <Card />
   <Button1 />
   <MenuCatalogue />
-  <Footerr />
 </template>
 
 <style>
