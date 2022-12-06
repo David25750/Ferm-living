@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": fileURLToPath(new URL("./src", import.meta.url))
     },
   },
   css: {
@@ -19,7 +19,6 @@ export default defineConfig({
           @import "@/scss/foundations/_functions.scss";
           @import "@/scss/foundations/_mixins.scss";
           @import "@/scss/foundations/_fonts.scss";
-          @import "@/scss/main.scss";
         `,
       },
     },

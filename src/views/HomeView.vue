@@ -31,3 +31,10 @@ import Button1 from "../components/elements/Button.vue";
   <MenuCatalogue />
   <Footerr />
 </template>
+
+<style>
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+</style>
