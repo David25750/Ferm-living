@@ -24,7 +24,6 @@ import Button1 from "../components/elements/Button.vue";
 </script>
 
 <template>
-  <Headerr />
   <div class="Home">
     <div class="Home__text">
       <h1>Ferm Living</h1>
