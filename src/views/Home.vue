@@ -54,7 +54,7 @@ import Button1 from "../components/elements/Button.vue";
   &__text{
     position:absolute;
     color: $grey;
-    width:36%;
+    width:670px;
     margin-left:50%;
     right: 13%;
     bottom: 34%;
