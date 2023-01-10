@@ -57,16 +57,81 @@ import Button1 from "../components/elements/Button.vue";
       </div>
     </div>
 
-    <div class="ContentSlider">
+    <div class="Content -modifier">
       <h2>Explore products by categories</h2>
-      <div class="ContentSlider__slide">
-        <div class="ContentSlider__slide__img"></div>
-        <div class="ContentSlider__slide__img"></div>
-        <div class="ContentSlider__slide__img"></div>
-        <div class="ContentSlider__slide__img"></div>
-        <div class="ContentSlider__slide__img"></div>
+      <div class="Wrapper"><!--CREER LE COMPONENT-->
+        <div class="Wrapper__slider">
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+          <div class="Wrapper__slider__slide">
+            <div class="Wrapper__slider__slide__content">
+              <img src="../assets/img/homepage/light fl.jpg"/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="Content">
+      <div class="Content__module">
+        <img src="../assets/img/homepage/custom.jpg"/>
+        <div class="Content__module__desc">
+            <h2>Rico - Sofa</h2>
+            <p>This product is offered to you on sale for a limited time. Enjoy it!</p>
+            <p>BOUTON</p>
+        </div>
+        <div class="Content__module__separateur"></div>
+      </div>
+      <div class="Content__module -reverse">
+        <div class="Content__module__separateur"></div>
+        <img src="../assets/img/homepage/custom.jpg"/>
+        <div class="Content__module__desc -reverse">
+            <h2>Rico - Sofa</h2>
+            <p>This product is offered to you on sale for a limited time. Enjoy it!</p>
+            <p>BOUTON</p>
+        </div>
+      </div>
+    </div>
+    <div class="ContentGlobal">
+      <div class="ContentGlobal__desc">
+        <h2>Our Responsabilities</h2>
+        <p>It's an ongoing journey and we know there will be dilemmas and bumps along the way.
+          By contributing to the important and ongoing dialogue on sustainability,
+          and by helping each other leverage insights to learn and grow,
+          we are all working towards a better tomorrow.
+        </p>
+        <button>click</button>
+      </div>
+      
+      
+
+    </div>
+
+     
+
   <!--
     <Banner />
   <Card />
@@ -113,6 +178,18 @@ import Button1 from "../components/elements/Button.vue";
   padding-top:70px;
   padding-bottom:70px;
 
+  h2{
+    font-size: $sizeH2;
+    font-family: $Title;
+    padding-bottom:70px;
+  }
+
+  &.-modifier{
+    flex-direction:column;
+    padding-left:100px;
+  }
+
+
   &__img{
 
     width:50%;
@@ -157,40 +234,135 @@ import Button1 from "../components/elements/Button.vue";
       justify-content:space-between;
     }
 
-     
-  &__center{
-    width: 65%;
-    display: flex;
-    flex-direction: column;
+    &__center{
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+    }
   }
+
+  &__module{
+    width:50%;
+    text-align:end;
+    margin-right:10%;
+
+    &.-reverse{
+      text-align:start;
+      margin-right:0%;
+      margin-top:200px;
+    }
+    &__separateur{
+      height:10%;
+    }
+    &__desc{
+
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content:between;
+      height: 20%;
+
+      &.-reverse{
+        align-items:start;
+      }
+
+      p{
+        font-size: $sizecontent;
+        font-family: $Content;
+        width:50%;
+        padding-bottom:30px;
+      }
+      
+      h2{
+        font-size: $sizeH2;
+        font-family: $Title;
+        padding-bottom:30px;
+        padding-top:30px;
+      }
+    }
+    img{
+      width:100%;
+      height:60%;
+      object-fit:cover;
+      
+    }
+
   }
+
 }
 
-.ContentSlider{
-  display:flex;
-  flex-direction:column;
+.Wrapper{
+  width: 100%;
+  margin: 0 auto;
 
-  h2{
-    font-family: $Title;
-    font-size: $sizeH2;
-  }
-
-  &__slide{
-    display:flex;
-    flex-direction:row;
-    width:100%;
-    margin-left:20px;
+  &__slider{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: auto;
+    overflow-y: hidden;
     overflow-x: scroll;
+    display: flex;
+    align-items: stretch;
+    scroll-snap-type: x mandatory;
 
-  &__img{
-    width:500px;
-    height:200px;
-    background-color:black;
-    border: 4px solid red;
+    &__slide{
+      flex-shrink: 0;
+      padding-right:100px;
+      scroll-snap-align: center;
+
+      &__content{
+        width: 300px; /* exemple */
+        height:400px;
+
+        img{
+          width:100%;
+          height:100%;
+        }
+      }
+    }
   }
-  
-    
+
+  &__slider::-webkit-scrollbar{
+    display: none;
   }
-  // flex-none first:pl-6 last:pr-6
+
 }
+
+.ContentGlobal{
+  background-image: url(../assets/img/homepage/our_responsability.jpg);
+  width:100%;
+  height:450px;
+  margin-top:70px;
+  margin-bottom:70px;
+  color:white;
+  text-align:center;
+  filter: brightness(50%);
+ 
+
+  &__desc{
+    width:37%;
+    height:100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    filter: brightness(1); //Marche pas 
+
+    p{
+      font-size:$sizecontent;
+      font-family: $Content;
+    }
+
+    h2{
+      font-size: $sizeH2;
+      font-family: $Title;
+    }
+  }
+}
+
+
+
+
+
 </style>
