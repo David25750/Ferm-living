@@ -122,8 +122,8 @@ export default{
             </ul>
         </div>
         <div class="footer__bas">
-            <p>Copyright FermLiving 2022</p>
-            <ul class="footer__reseaux">
+            <p class="footer__reseaux -index1">Copyright FermLiving 2022</p>
+            <ul class="footer__reseaux -index3">
                 <li v-for="reseau in reseaux" :key="reseau.id" class="footer__logo">
                     <img :src="reseau.label" :alt="reseau.desc">
                 </li>
@@ -134,10 +134,47 @@ export default{
 <style lang="scss" scoped>
     .footer{
         background-color: $darkgrey;
-        &__list{
+        &__haut, &__bas{
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+            & p{
+                color: white;
+                padding-inline-start: 40px;
+                font-family: $Content;
+                color: white;
+            }
+        }
+        &__logo{
+            display: inline-block;
+            padding: 8px;
+            vertical-align: middle;
+            & img{
+                height: 40px;
+            }
+        }
+
+        &__list, &__reseaux{
+            padding-top: 70px;
+            padding-bottom: 30px;
             list-style: none;       
-            margin: auto;
-            padding: 0;
+            
+
+            &.-index1{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            &.-index2{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            &.-index3{
+                grid-column: 4;
+                grid-row: 1;
+                margin: auto;
+            }
         }
         &__item{
             padding: 5px;
@@ -155,6 +192,10 @@ export default{
             text-decoration: none;
             font-family: $Content;
             color: white;
+        }
+
+        &__reseaux.-index1{
+            align-self: end;
         }
     }
 </style>
