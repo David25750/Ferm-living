@@ -301,6 +301,7 @@
     &__content {
         display: flex;
         justify-content: space-evenly;
+        padding-block:100px;
     }
 
     &__list {
