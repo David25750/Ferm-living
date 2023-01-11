@@ -79,6 +79,11 @@ const router = createRouter({
       name: 'achatSelection',
       component: () => import('../views/achat/achatSelection.vue')
     },
+    {
+      path: '/brandHistory',
+      name: 'brandHistory',
+      component: () => import('../views/BrandHistory.vue')
+    },
   ]
 })
 
