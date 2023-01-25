@@ -55,9 +55,9 @@ const router = createRouter({
       component: () => import('../views/compte/inscription.vue')
     },
     {
-      path: '/catalogueSofa',
-      name: 'catalogueSofa',
-      component: () => import('../views/catalogue/CatalogSofa.vue')
+      path: '/CatalogueSofa',
+      name: 'CatalogueSofa',
+      component: () => import('../views/catalogue/CatalogueSofa.vue')
     },
     {
       path: '/catalogue',
