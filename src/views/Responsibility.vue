@@ -1,4 +1,12 @@
 <script>
+import Banner from "../components/Banner.vue";
+
+export default {
+    components: {
+      Banner,
+      
+    },
+  };
 
 </script>
 
@@ -126,7 +134,7 @@
         </div>
     </div>
     
-    <!--Compartiment des valeurs a mettre ici !-->
+    <Banner></Banner>
 
     <!--Compartiment du footer a mettre ici !-->
 </template>

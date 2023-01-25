@@ -130,10 +130,12 @@ import Button1 from "../components/elements/Button.vue";
 
     </div>
 
+    <Banner></Banner>
+
      
 
   <!--
-    <Banner />
+    
   <Card />
   <Button1 />
   <MenuCatalogue />
