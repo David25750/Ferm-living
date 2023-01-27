@@ -20,9 +20,9 @@ const router = createRouter({
       component: () => import('../views/Responsibility.vue')
     },
     {
-      path: '/tinderMatch',
-      name: 'tinderMatch',
-      component: () => import('../views/Tinder/tinderMatch.vue')
+      path: '/tinder',
+      name: 'tinder',
+      component: () => import('../views/Tinder/tinder.vue')
     },
     {
       path: '/tinderTutoriel',
