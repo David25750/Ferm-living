@@ -1,58 +1,63 @@
 <script>
+export default {
+  name: 'Button',
+  props: {
+    color: {
+      type: String,
+      default: '#FFFFFF',
+    },
+  },
+};
 </script>
 <template>
-    <button class="button">
-            Click
-        </button>
-        
-        <button class="button -light">
-            Customize
-        </button>
-
-        <button class="button -border">
-            See more
+    <button class="button" :class="['button', `-color-${color}`]">
+            <slot></slot>
         </button>
 </template>
 <style lang="scss" scoped>
 
 .button{
-        color: rgb(255, 255, 255);
-        border: 0;
+        border:none;
         width: 250px;
-        background-color: $black;
         padding-top: 10px;
         padding-bottom: 10px;
         font-family: $Content;
         font-size: $sizecontent;
-        &:hover{
-            background-color: $brown;
+        &.-color-grey{
+          color: $grey;
+          background-color: $darkgrey;
+          &.-color-grey:hover{
+            background-color: $brown;                
+          }
+          &.-color-grey:active{
+            background-color: $darkgrey;
+          }
         }
-        &:active{
+        &.-color-brown{
+          color: $brown;
+          background-color: $grey;
+          &.-color-brown:hover{
+            color: $grey;
+          background-color: $brown;                
+          }
+          &.-color-brown:active{
             background-color: $grey;
-            color: $black;
+          }
         }
-
-        &.-light{
-            background-color: $grey;
-            color: $green;
-            &:hover{
-                background-color: $green;
-                color: $grey;
-            }
-            &:active{
-                background-color: $grey;
-                color: $green;
-                border: 3px solid;
-                border-color: $green;
-            }
+        &.-color-white{
+          color: $darkgrey;
+          background-color: transparent;
+          &.-color-white:hover{
+            border: 3px solid;
+            border-color: $darkgrey;
+          }
+          &.-color-white:active{
+            border: 3px solid;
+            border-color: $darkgrey;
+            color: $grey;
+          background-color: $darkgrey;
+          }
         }
-        &.-border{
-            background-color: rgba(128,120,05,0);
-            color: $green;
-            &:hover{
-                border: 3px solid;
-                }
-        }
-    }
+      }
 
 </style>
