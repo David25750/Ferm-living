@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/product',
       name: 'product',
-      component: () => import('../components/Product.vue')
+      component: () => import('../views/PagesProduit/produitDesc.vue')
     },
     {
       path: '/universe',
