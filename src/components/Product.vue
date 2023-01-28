@@ -14,11 +14,11 @@ export default {
 }
 </script>
 <template>
-    <template>
+    <!-- <template>
             <Product :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
             <Product v-bind="{ name: product.name, slug: product.slug, price: product.price, images: product.images }" />
             <Product v-bind="product" />
-</template> 
+</template>  -->
     <div>
       <h1>{{ product.name }}</h1>
       <p>{{ product.price }}</p>
