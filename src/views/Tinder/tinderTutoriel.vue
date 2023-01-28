@@ -1,11 +1,9 @@
 <script>
-import Footerr from "../../components/Footer.vue";
 import Banner from "../../components/Banner.vue";
 import Modal from "../../components/Modal_Tinder.vue";
 
 export default{
     components:{
-        Footerr,
         Banner,
         Modal,
     },

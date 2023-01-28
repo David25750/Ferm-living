@@ -1,16 +1,35 @@
 <script>
+
+export default{
+    props:{
+        img:{
+            type:String,
+            default:null,
+        },
+
+        title:{
+            type:String,
+            default:null,
+        },
+
+        desc:{
+            type:String,
+            default:null,
+        },
+
+    }
+}
 </script>
 <template>
-    <div class="line-card">
         <div class="card">
             <div class="card__item">
-                <img src="../assets/img/products/product.png" alt="produit" />
+                <img :src="img" alt="produit" />
                 <!--<button>Customize</button>-->
             </div>
             <div class="card__info">
                 <div class="card__info__desc">
-                    <h1>Product</h1>
-                    <p>produit de qualité</p>
+                    <h1>{{title}}</h1>
+                    <p>{{ desc }}</p>
                 </div>
                 <div class="card__info__button">
                     <button type="submit">
@@ -20,50 +39,14 @@
             </div>    
         </div>
 
-        <div class="card">
-            <div class="card__item">
-                <img src="../assets/img/products/product.png" alt="produit" />
-                <!--<button>Customize</button>-->
-            </div>
-            <div class="card__info">
-                <div class="card__info__desc">
-                    <h1>Product</h1>
-                    <p>produit de qualité</p>
-                </div>
-                <div class="card__info__button">
-                    <button type="submit">
-                        <img src="../assets/icon/caddieblanc.svg" alt="bouton_achat"/>
-                    </button>
-                </div>    
-            </div>    
-        </div>
-
-        <div class="card">
-            <div class="card__item">
-                <img src="../assets/img/products/product.png" alt="produit" />
-                <!--<button>Customize</button>-->
-            </div>
-            <div class="card__info">
-                <div class="card__info__desc">
-                    <h1>Product</h1>
-                    <p>produit de qualité</p>
-                </div>
-                <div class="card__info__button">
-                    <button type="submit">
-                        <img src="../assets/icon/caddieblanc.svg" alt="bouton_achat"/>
-                    </button>
-                </div>    
-            </div>    
-        </div>
-    </div>
 </template>
 <style lang="scss" scoped>
+
 .card{
     display:flex;
     flex-direction: column;
     height:500px;
     width:300px;
-    margin:100px;
 
     &__item{
         
@@ -125,10 +108,4 @@
  
 }
 
-.line-card{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    
-}
 </style>

@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/Tinder/tinder.vue')
     },
     {
+      path: '/tinderResult',
+      name: 'tinderResult',
+      component: () => import('../views/Tinder/tinderResult.vue')
+    },
+    {
       path: '/tinderTutoriel',
       name: 'tinderTutoriel',
       component: () => import('../views/Tinder/tinderTutoriel.vue')
