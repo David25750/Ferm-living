@@ -55,11 +55,10 @@ export default {
 
  -->
 <script>
-import axios from 'axios';
 import Card from '../../components/Card.vue';
 import ListCards from '../../components/ListCards.vue';
 import MenuCatalogue from '../../components/MenuCatalogue.vue';
-
+import axios from 'axios'
 export default {
   components: { 
     Card,
@@ -91,8 +90,16 @@ export default {
   },
   async mounted () {
     // Request products
-    const productsResponse = await axios.get(import.meta.env.VITE_WP_API_URL + '/wc/v3/products')
+    const productsResponse = await axios.get(import.meta.env.VITE_WP_API_URL + "/wc/v3/products", {
+      auth: {
+    	  username: 'admin',
+		    password: 'admin'
+	    }   
+    })
+
+    
     this.products = productsResponse.data
+    console.log(this.products[0].name)
   },
   methods: {
     // changePage (index) {
@@ -111,8 +118,8 @@ export default {
   <MenuCatalogue></MenuCatalogue>
   <div class="herosofa"></div>
   <div class="catalogue">
-    <p class="text-h2 text-white mb-5">Liste des produits</p>
-    <ListCards></ListCards>
+    <h2>All products</h2>
+    <ListCards :items="this.products"></ListCards>
   </div>
 
   <!-- <div class="products-view">
@@ -144,7 +151,7 @@ export default {
 <style lang="scss">
 
 .herosofa {
-    background-image: url(../../assets/img/sofa/threesofas.jpg);
+    background-image: url(../../assets/img/autre/coverCatalogue.png);
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -160,6 +167,14 @@ export default {
   flex-direction:column;
   justify-content:center;
   align-items:center;
+
+  h2{
+    font-family:$Title;
+    font-size:$sizeH1;
+    padding-top:10vh;
+    padding-bottom:10vh;
+  }
+
 
 }
 
