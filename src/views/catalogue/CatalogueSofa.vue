@@ -86,7 +86,18 @@ export default {
         </div>
     </div>
 
-    <Card></Card>
+    <div class="section">
+        <div class="section__width">
+            <h2 class="section__width__title">Get Inspired ...</h2>
+        </div>
+        
+        <div class="section__cards">
+            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+        </div>
+        
+    </div>
 
     <Banner></Banner>
 
@@ -109,6 +120,7 @@ export default {
 
 .sofadesc {
     width: 100%;
+    text-align:center;
 
     &__title {
 
@@ -206,6 +218,7 @@ export default {
         display: flex;
         justify-content: space-around;
         padding-block:100px;
+        text-align:end;
     }
 
     &__turntitle{
@@ -226,7 +239,8 @@ export default {
         font-size: $sizeH2;
         padding-top: 200px;
         width:660px;
-        position:absolute
+        position:absolute;
+        text-align: center;
 
     }
 
@@ -248,6 +262,31 @@ export default {
         padding-block: 20px;
     }
 
+}
+
+.section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    margin-top:5%;
+    margin-bottom:5%;
+
+    &__cards{
+        display:flex;
+        justify-content:space-between;
+        width:70%
+    }
+
+    &__width{
+        width:70%;
+
+        &__title{
+            font-family:$Title;
+            font-size:$sizeH2;
+        }
+    }
+    
 }
 
 
