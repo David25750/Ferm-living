@@ -12,7 +12,12 @@ export default{
             default:null,
         },
 
-        desc:{
+        price:{
+            type: Number,
+            default:null,
+        },
+
+        id:{
             type:String,
             default:null,
         },
@@ -23,13 +28,16 @@ export default{
 <template>
         <div class="card">
             <div class="card__item">
-                <img :src="img" alt="produit" />
+                <a :href="`/produitDescription/${id}`">
+                    <img :src="img" alt="produit" />
+                </a>
+                
                 <!--<button>Customize</button>-->
             </div>
             <div class="card__info">
                 <div class="card__info__desc">
                     <h1>{{title}}</h1>
-                    <p>{{ desc }}</p>
+                    <p>{{ price }}$</p>
                 </div>
                 <div class="card__info__button">
                     <button type="submit">
