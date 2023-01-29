@@ -70,8 +70,9 @@ export default{
         <div class="section__total">
             <p>Total : 1450€</p>
         </div>
-        
-        <button class="section__button">Proceed to payment</button>
+        <router-link to="/achatCoordonnees">
+            <button class="section__button">Proceed to payment</button>
+        </router-link>
 
     </div>
 

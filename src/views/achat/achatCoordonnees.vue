@@ -60,4 +60,43 @@ export default {
 </template>
 <style lang="scss" scoped>
 
+.purchaseContact{
+    width:100%;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding-top:5vh;
+    padding-bottom:10vh;
+    justify-content:space-between;
+
+    &__title{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        height:15%;
+
+        h1{
+            font-family:$Title;
+            font-size:$sizeH2;
+            padding-bottom:3%;
+        }
+
+        p{
+            font-family:$Content;
+            font-size:$sizecontent;
+            padding-bottom: 10%;
+            border-bottom: 1px solid black; 
+        }
+    }
+
+    &__general{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+    }
+
+    
+}
+
 </style>

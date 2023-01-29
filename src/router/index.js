@@ -55,16 +55,6 @@ const router = createRouter({
       component: () => import('../views/compte/compte.vue')
     },
     {
-      path: '/connexion',
-      name: 'connexion',
-      component: () => import('../views/compte/connexion.vue')
-    },
-    {
-      path: '/inscription',
-      name: 'inscription',
-      component: () => import('../views/compte/inscription.vue')
-    },
-    {
       path: '/CatalogueSofa',
       name: 'CatalogueSofa',
       component: () => import('../views/catalogue/CatalogueSofa.vue')
@@ -77,7 +67,7 @@ const router = createRouter({
     {
       path: '/achatCoordonnees',
       name: 'achatCoordonnees',
-      component: () => import('../views/achat/achatCoordonnée.vue')
+      component: () => import('../views/achat/achatCoordonnees.vue')
     },
     {
       path: '/achatPaiement',

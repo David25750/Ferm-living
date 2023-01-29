@@ -27,6 +27,8 @@ export default{
 </script>
 <template>
         <div class="card">
+            <button class="card__button" type="button">salut</button>
+
             <div class="card__item">
                 <a :href="`/produitDescription/${id}`">
                     <img :src="img" alt="produit" />
@@ -36,7 +38,7 @@ export default{
             </div>
             <div class="card__info">
                 <div class="card__info__desc">
-                    <h1>{{title}}</h1>
+                    <h1>{{ title }}</h1>
                     <p>{{ price }}$</p>
                 </div>
                 <div class="card__info__button">
@@ -53,13 +55,18 @@ export default{
 .card{
     display:flex;
     flex-direction: column;
-    height:500px;
+    justify-content:space-between;
+    height:400px;
     width:300px;
+    margin-bottom:20vh;
+
+    &__button{
+        width:50%;
+    }
 
     &__item{
         
         img{
-            height:400px;
             width:300px;
         }
     }
@@ -88,8 +95,8 @@ export default{
             border-radius: 0;
             background-color: $darkgrey;
             border:none;
-            height: 50px;
-            width:50px;
+            height: 60px;
+            width:60px;
 
             img{
                 height:24px;
@@ -102,6 +109,7 @@ export default{
             width:100%;
             display:flex;
             flex-direction:column;
+            justify-content:space-between;
 
             
         }
