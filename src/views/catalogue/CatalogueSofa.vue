@@ -1,6 +1,7 @@
 <script>
 import MenuCatalogue from "../../components/MenuCatalogue.vue";
 import Card from "../../components/Card.vue";
+import RandomCard from "../../components/randomProduct.vue";
 import Banner from "../../components/Banner.vue";
 
 export default {
@@ -8,6 +9,7 @@ export default {
       
       MenuCatalogue,
       Card,
+      RandomCard,
       Banner,
       
     },
@@ -91,10 +93,8 @@ export default {
             <h2 class="section__width__title">Get Inspired ...</h2>
         </div>
         
-        <div class="section__cards">
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+        <div class="card">
+            <RandomCard></RandomCard>
         </div>
         
     </div>
@@ -272,12 +272,6 @@ export default {
     margin-top:5%;
     margin-bottom:5%;
 
-    &__cards{
-        display:flex;
-        justify-content:space-between;
-        width:70%
-    }
-
     &__width{
         width:70%;
 
@@ -287,6 +281,18 @@ export default {
         }
     }
     
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 10%;
+    width: 70%;
+    margin-top:15vh;
+
 }
 
 

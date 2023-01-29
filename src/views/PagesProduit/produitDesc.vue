@@ -1,24 +1,62 @@
 <script>
 import Card from "../../components/Card.vue";
+import ListCards from "../../components/ListCards.vue";
+import RandomProducts from "../../components/randomProduct.vue";
+import axios from 'axios'
     export default{
         components:{
             Card,
-        }
+            ListCards,
+            RandomProducts,
+        },
+
+        data () {
+            return {
+                data: {
+
+                },
+                id: null,
+                isLoading:true,
+            }
+        },
+
+        methods:{
+            addToCart () {
+                this.$store.commit('add', this.data)
+            },
+        },
+
+        async mounted () {
+            // Request products
+            const id = window.location.href.match(/\/produitDescription\/(\d+)/)[1];
+            console.log(id);
+            const productsResponse = await axios.get(import.meta.env.VITE_WP_API_URL + "/wc/v3/products/" + id, {
+            auth: {
+                username: 'admin',
+                password: 'admin'
+                }   
+            })
+            this.data = productsResponse.data
+            console.log(productsResponse.data)
+            this.isLoading=false
+        },
     };
+
+    
 </script>
 
 <template>
-
-    <div class="sectionPrincipale">
+    <div v-if="this.isLoading"></div>
+    <div v-else class="sectionPrincipale">
         <button class="sectionPrincipale__button">fleche</button>
         <div class="sectionProduct">
             <div class="sectionProduct__left">
                 <div class="sectionProduct__left__info">
-                    <h1 class="sectionProduct__left__info__title">Sofa Catena</h1>
-                    <p class="sectionProduct__left__info__title -bold">750$</p>
+                    <h1 class="sectionProduct__left__info__title">{{ this.data.name }}</h1>
+                    <p class="sectionProduct__left__info__title -bold">{{ this.data.price }}$</p>
                 </div>
                 <div class="sectionProduct__left__img">
-                    <img src="src/assets/img/products/image22.png"/>
+                    <img :src="this.data.images[0].src"/>
                 </div>
             </div>
 
@@ -28,20 +66,15 @@ import Card from "../../components/Card.vue";
                         <p class="sectionProduct__right__menu__content -bold">Description</p>
                         <p class="sectionProduct__right__menu__content">Details</p>
                     </div>
-                    <p class="sectionProduct__right__paragraph">The embracing, beanbag-inspired shape of our low-slung Catena sofa is generously dimensioned
-                    for all-out relaxation and cosiness: we call it 'low living'. The name Catena is inspired by the catenary curve,
-                    a u-like shape that a chain or cable adopts when supported only at its ends, and which is mirrored in the soft
-                    curves and top-stitched seams of the Catena sofa. The homely, module-based designs are made with innovative
-                    microcellular foam that ensures maximum comfort as well as durability. The series comprises individual modules
-                    that can be combined in multiple ways to create the desired expression. This item is part of our made to order
-                    customisation concept. The materials have been handpicked in order to create this custom piece - the only one of
-                    its kind. Please note it cannot be exchanged or returned.
-                    </p>
+                    <p class="sectionProduct__right__paragraph">{{ this.data.description }}</p>
                 </div>
                 
                 <div class="sectionProduct__right__buttons">
                     <button>Customize</button>
-                    <button>Add</button>
+                    <router-link to="/achatSelection">
+                        <button @click="addToCart" >Add</button>
+                    </router-link>
+                    
                 </div>
             </div>
 
@@ -53,7 +86,7 @@ import Card from "../../components/Card.vue";
     <div class="sectionOpinion">
 
         <div class="sectionOpinion__img">
-            <img src="src/assets/img/autre/example.png"/>
+            <img src="../../assets/img/autre/example.png"/>
         </div>
         <div class="sectionOpinion__slider">
                 <div class="Wrapper"><!--CREER LE COMPONENT-->
@@ -65,11 +98,11 @@ import Card from "../../components/Card.vue";
                                     <p class="Wrapper__slider__slide__content__text">The delivery was delayed by a day, but other than that I'm happy it's exactly what I expected.</p>
                                 </div>
                                 <div class="Wrapper__slider__slide__content__icons">
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +113,11 @@ import Card from "../../components/Card.vue";
                                     <p class="Wrapper__slider__slide__content__text">The delivery was delayed by a day, but other than that I'm happy it's exactly what I expected.</p>
                                 </div>
                                 <div class="Wrapper__slider__slide__content__icons">
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
                                 </div>
                             </div>
                         </div>
@@ -95,11 +128,11 @@ import Card from "../../components/Card.vue";
                                     <p class="Wrapper__slider__slide__content__text">The delivery was delayed by a day, but other than that I'm happy it's exactly what I expected.</p>
                                 </div>
                                 <div class="Wrapper__slider__slide__content__icons">
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
                                 </div>
                             </div>
                         </div>
@@ -110,11 +143,11 @@ import Card from "../../components/Card.vue";
                                     <p class="Wrapper__slider__slide__content__text">The delivery was delayed by a day, but other than that I'm happy it's exactly what I expected.</p>
                                 </div>
                                 <div class="Wrapper__slider__slide__content__icons">
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
-                                    <img src="src/assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
+                                    <img src="../../assets/icon/croix.svg"/>
                                 </div>
                             </div>
                         </div>
@@ -130,12 +163,10 @@ import Card from "../../components/Card.vue";
         <div class="section__width">
             <h2 class="section__width__title">You will also like ...</h2>
         </div>
-        
-        <div class="section__cards">
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+        <div class="card">
+            <RandomProducts></RandomProducts>
         </div>
+        
         
     </div>
 
@@ -246,12 +277,6 @@ import Card from "../../components/Card.vue";
     margin-top:5%;
     margin-bottom:5%;
 
-    &__cards{
-        display:flex;
-        justify-content:space-between;
-        width:70%
-    }
-
     &__width{
         width:70%;
 
@@ -340,6 +365,18 @@ import Card from "../../components/Card.vue";
   &__slider::-webkit-scrollbar{
     display: none;
   }
+
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 10%;
+    width: 70%;
+    margin-top:15vh;
 
 }
 

@@ -40,7 +40,7 @@ const router = createRouter({
       component: () => import('../views/Tinder/tinderTutoriel.vue')
     },
     {
-      path: '/produitDescription',
+      path: '/produitDescription/:id',
       name: 'produitDescription',
       component: () => import('../views/PagesProduit/produitDesc.vue')
     },

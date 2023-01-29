@@ -1,5 +1,18 @@
 <script>
+import CartProduct from "../../components/ProductCart.vue"
 export default{
+    components:{
+        CartProduct,
+    },
+
+    computed: {
+    cartTotal () {
+      return this.$store.state.products.reduce((total, product) => {
+        total+=product.quantity * product.price
+        return total
+      }, 0)
+    }
+  },
 
 };
 </script>
@@ -9,66 +22,22 @@ export default{
             <h1>YOUR SELECTION</h1>
             <p>You have 2 items for 1450€.</p>
         </div>
-        <div class="section__content">
-            <img src="src/assets/img/products/catena.png"/>
-            <div class="section__content__infos">
-                <div class="section__content__infos__line">
-                    <p>Catena</p>
-                    <p>1400€</p>
-                </div>
-                <div class="section__content__infos__line">
-                    <div class="section__content__infos__line__blocWidth">
-                        <div class="section__content__infos__line__bloc">
-                            <div class="carre"></div>
-                            <p>Color : Grey</p>
-                        </div>
-                        <div class="section__content__infos__line__bloc">
-                            <div class="carre"></div>
-                            <p>Color : Grey</p>
-                        </div>
-                    </div>
-                    
-                    <img src="src/assets/icon/croix.svg"/>
-                </div>
-                <div class="section__content__infos__line">
-                    <div class="section__content__infos__line__bloc">
-                        <div class="carre"></div>
-                        <p>Color : Grey</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section__content">
-            <img src="src/assets/img/products/catena.png"/>
-            <div class="section__content__infos">
-                <div class="section__content__infos__line">
-                    <p>Catena</p>
-                    <p>1400€</p>
-                </div>
-                <div class="section__content__infos__line">
-                    <div class="section__content__infos__line__blocWidth">
-                        <div class="section__content__infos__line__bloc">
-                            <div class="carre"></div>
-                            <p>Color : Grey</p>
-                        </div>
-                        <div class="section__content__infos__line__bloc">
-                            <div class="carre"></div>
-                            <p>Color : Grey</p>
-                        </div>
-                    </div>
-                    
-                    <img src="src/assets/icon/croix.svg"/>
-                </div>
-                <div class="section__content__infos__line">
-                    <div class="section__content__infos__line__bloc">
-                        <div class="carre"></div>
-                        <p>Color : Grey</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
+            <CartProduct v-for="(product, index) in $store.state.products" :key="index"
+                    v-bind="{
+                    id: product.id,
+                    quantity: product.quantity,
+                    attribut1:product.attributes[0].options[0],
+                    attribut2:product.attributes[0].options[0],
+                    attribut3:product.attributes[0].options[0],
+                    image: product.images[0].src,
+                    name: product.name,
+                    price: product.price }">
+                </CartProduct>
+        
+        
         <div class="section__total">
-            <p>Total : 1450€</p>
+            <p>Total : {{cartTotal}}$</p>
         </div>
         <router-link to="/achatCoordonnees">
             <button class="section__button">Proceed to payment</button>
@@ -106,49 +75,6 @@ export default{
             font-size:$sizecontent;
             padding-bottom: 10%;
             border-bottom: 1px solid black; 
-        }
-
-    }
-
-    &__content{
-        display:flex;
-        width:70%;
-        justify-content:space-between;
-
-        &__infos{
-            display:flex;
-            flex-direction:column;
-            justify-content: space-around;
-            width:75%;
-
-            &__line{
-                display:flex;
-                flex-direction:row;
-                justify-content: space-between;
-                font-family:$Content;
-                font-size:$sizecontent;
-
-                &__bloc{
-                    display:flex;
-                    flex-direction:row;
-                    align-items: center;
-                    font-size:$sizesmallcontent;
-
-
-                }
-
-                &__blocWidth{
-                    width: 40%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-
-                img{
-                    height:20px;
-                    width:20px;
-                }
-            }
         }
 
     }
