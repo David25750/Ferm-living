@@ -1,11 +1,13 @@
 <script>
 import Banner from "../../components/Banner.vue";
 import Card from "../../components/Card.vue";
+import RandomCard from "../../components/randomProduct.vue";
 
 export default{
     components:{
         Banner,
         Card,
+        RandomCard,
     }
 };
 
@@ -23,10 +25,8 @@ export default{
             <h2 class="section__width__title">You will also like ...</h2>
         </div>
         
-        <div class="section__cards">
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
-            <Card title="Sofa rico 2P" desc="suitable for apartments" img="src/assets/img/products/product.png"></Card>
+        <div class="card">
+            <RandomCard></RandomCard>
         </div>
         
     </div>
@@ -84,5 +84,17 @@ export default{
         }
     }
     
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 10%;
+    width: 70%;
+    margin-top:15vh;
+
 }
 </style>
