@@ -62,13 +62,10 @@ export default {
 
 .purchaseContact{
     width:100%;
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    padding-top:5vh;
-    padding-bottom:10vh;
-    justify-content:space-between;
+    
+    
+    
+    
 
     &__title{
         display:flex;
@@ -90,10 +87,9 @@ export default {
         }
     }
 
-    &__general{
-        display:flex;
-        flex-direction:column;
-        width:100%;
+    &__generaltitle{
+        color:$grey;
+        background-color: $green;
     }
 
     
