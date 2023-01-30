@@ -13,16 +13,16 @@ export default {
             <h2 class="purchaseContact__generaltitle">General information</h2>
             <div class="purchaseContact__generalcontent">
                 <div class="purchaseContact__champ">
-                    <label for="">Name</label>
-                    <input type="text">
+                    <label class="purchaseContact__label" for="">Name</label>
+                    <input class="purchaseContact__input" type="text">
                 </div>
                 <div class="purchaseContact__champ">
-                    <label for="">Firstname</label>
-                    <input type="text">
+                    <label class="purchaseContact__label" for="">Firstname</label>
+                    <input class="purchaseContact__input" type="text">
                 </div>
                 <div class="purchaseContact__champ">
-                    <label for="">Phone number</label>
-                    <input type="text">
+                    <label class="purchaseContact__label" for="">Phone number</label>
+                    <input class="purchaseContact__input" type="text">
                 </div>
 
 
@@ -33,27 +33,29 @@ export default {
         </div>
         <div class="purchaseContact__adresscontent">
             <div class="purchaseContact__champ">
-                <label for="">Postal adress</label>
-                <input type="text">
+                <label class="purchaseContact__label" for="">Postal adress</label>
+                <input class="purchaseContact__input" type="text">
             </div>
             <div class="purchaseContact__champ">
-                <label for="">City</label>
-                <input type="text">
+                <label class="purchaseContact__label" for="">City</label>
+                <input class="purchaseContact__input" type="text">
             </div>
             <div class="purchaseContact__champ">
-                <label for="">Postal code</label>
-                <input type="text">
+                <label class="purchaseContact__label" for="">Postal code</label>
+                <input class="purchaseContact__input" type="text">
             </div>
             <div class="purchaseContact__champ">
-                <label for="">Country</label>
-                <input type="text">
+                <label class="purchaseContact__label" for="">Country</label>
+                <input class="purchaseContact__input" type="text">
             </div>
 
 
         </div>
 
 
-        <button class="section__button">Proceed to payment</button>
+        <button class="purchaseContact__button">
+            <a class="purchaseContact__link">Proceed to payment</a>
+        </button>
 
     </div>
 
@@ -62,6 +64,7 @@ export default {
 
 .purchaseContact{
     width:100%;
+    padding-block:60px;
     
     
     
@@ -82,14 +85,82 @@ export default {
         p{
             font-family:$Content;
             font-size:$sizecontent;
-            padding-bottom: 10%;
-            border-bottom: 1px solid black; 
+            padding-bottom:5%;
+            
         }
     }
 
     &__generaltitle{
         color:$grey;
         background-color: $green;
+        font-family: $Contentsemibold;
+        width:636px;
+        padding-left:300px;
+    }
+
+
+    &__generalcontent{
+        
+        padding-block:20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap:20px;
+        
+    }
+
+
+    &__champ{
+        margin:auto;
+    }
+    
+    &__input{
+        width:350px;
+        height:50px;
+        border:none;
+        border-bottom:solid 2px black;
+        
+    }
+
+    &__adresstitle{
+        color:$grey;
+        background-color: $green;
+        font-family: $Contentsemibold;
+        width:636px;
+        padding-left:300px;
+    }
+
+
+    &__adresscontent{
+        
+        padding-block:20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap:20px;
+        
+    }
+
+    &__label{
+        font-family: $Content;
+        font-size: $sizesmallcontent;
+    }
+
+    &__button{
+        display: block;
+        margin:auto;
+        background-color: $darkgrey;
+        padding-block:20px;
+        padding-inline:80px;
+        margin-top:60px;
+        border:none;
+
+    }
+
+    &__link{
+        color:$grey;
+        font-family: $Content;
+        font-size: $sizecontent;
     }
 
     
