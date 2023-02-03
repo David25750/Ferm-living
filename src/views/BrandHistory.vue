@@ -9,7 +9,10 @@ export default{
 <template>
     <div class="Content">
         <div class="flex">
-            <button>Click</button>
+            <router-link to="/universe">
+                <button>Click</button>
+            </router-link>
+            
         </div>
         <div class="Wrapper">
             <div class="Wrapper__slider">

@@ -31,51 +31,26 @@ export default {
     
     this.products = productsResponse.data
     console.log(this.products[0].name)
+    this.isLoading=false
   },
   methods: {
-    // changePage (index) {
-    //   // If not first and not last page
-    //   if (index >= 0 && index <= this.pagesCount - 1) {
-    //     this.page = index
-    //   }
-    // },
-    // resetPage () {
-    //   this.changePage(0)
-    // }
+
   }
 }
 </script>
  <template>
+      <div v-if="this.isLoading" class="loader">
+        <div class="custom-loader"></div>
+    </div>
+    <div v-else>
   <MenuCatalogue></MenuCatalogue>
   <div class="herosofa"></div>
   <div class="catalogue">
     <h2>All products</h2>
     <ListCards :items="this.products"></ListCards>
   </div>
-
-  <!-- <div class="products-view">
-    <div class="container">
-      <div class="products-wrapper">
-        <h2 class="home__subtitle">Liste des produits</h2>
-          <div class="column -size-9">
-            <div v-if="paginatedProducts.length" class="products-list || row">
-              <div v-for="(product, index) in paginatedProducts" class="products-item || column -size-3">
-                
-              </div>
-            </div>
-            <div class="products-view__pagination">
-              Page courante : {{ page }}
-              <br>
-              <div class="products-view__pagination-control">
-                <button @click="changePage(page - 1)">Page précédente</button>
-                <span class="products-view__page-index" v-for="index in pagesCount" @click="changePage(index - 1)">[ {{ index }} ]</span>
-                <button @click="changePage(page + 1)">Page suivante</button>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+</div>
+  
 </template>
 
 

@@ -30,14 +30,14 @@ import Button1 from "../components/elements/Button.vue";
     <div class="Content">
       <div class="Content__img">
         <p>Your wish is here</p>
-        <img class="" src="../assets/img/homepage/home.jpg"/>
+        <img class="" src="../assets/img/homepage/canap.png"/>
       </div>
       
       <div class="Content__text">
         <div class="Content__text__center">
           <h2>Hearth Finding</h2>
           <p>With this feature, you will have the opportunity to find the piece of furniture that suits you the most.</p>
-          <button>click</button>
+          <p>See more -></p>
         </div>
       </div>
     </div>
@@ -45,11 +45,11 @@ import Button1 from "../components/elements/Button.vue";
       <div class="Content__text -space">
         <h2>Sofa Rico</h2>
         <p>1000 $</p>
-        <img src="../assets/img/products/fermLIVING_TurnSofa_3-seater_Pasadena_1104263179_3.jpg"/>
-        <button>click</button>
+        <img src="../assets/img/homepage/canapProduct.png"/>
+        <p>See more -></p>
       </div>
       <div class="Content__img">
-        <img class="" src="../assets/img/homepage/home.jpg"/>
+        <img src="../assets/img/homepage/canap2.png"/>
       </div>
     </div>
 
@@ -59,32 +59,32 @@ import Button1 from "../components/elements/Button.vue";
         <div class="Wrapper__slider">
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/sofa.png"/>
             </div>
           </div>
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/lightning.png"/>
             </div>
           </div>
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/furniture.png"/>
             </div>
           </div>
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/sofa.png"/>
             </div>
           </div>
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/lightning.png"/>
             </div>
           </div>
           <div class="Wrapper__slider__slide">
             <div class="Wrapper__slider__slide__content">
-              <img src="../assets/img/homepage/light fl.jpg"/>
+              <img src="../assets/img/homepage/furniture.png"/>
             </div>
           </div>
         </div>
@@ -175,6 +175,7 @@ import Button1 from "../components/elements/Button.vue";
   flex-direction:row;
   padding-top:70px;
   padding-bottom:70px;
+  height:100%;
 
   h2{
     font-size: $sizeH2;
@@ -189,7 +190,6 @@ import Button1 from "../components/elements/Button.vue";
 
 
   &__img{
-
     width:50%;
 
     img{

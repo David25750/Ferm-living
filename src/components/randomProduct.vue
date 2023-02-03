@@ -34,7 +34,9 @@ export default{
 };
 </script>
 <template>
-  <div v-if="this.isLoading"></div>
+  <div v-if="this.isLoading" class="loader">
+        <div class="custom-loader"></div>
+    </div>
   <div v-else class="cards">
       <Card  v-for="(item, idx) in this.products" :price="item.price" :title="item.name" :img="item.images[0].src" :id="item.id"></Card>
     </div>
