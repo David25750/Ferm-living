@@ -93,21 +93,21 @@ import Button1 from "../components/elements/Button.vue";
 
     <div class="Content">
       <div class="Content__module">
-        <img src="../assets/img/homepage/custom.jpg"/>
+        <img src="../assets/img/homepage/custom.png"/>
         <div class="Content__module__desc">
             <h2>Rico - Sofa</h2>
             <p>This product is offered to you on sale for a limited time. Enjoy it!</p>
-            <p>BOUTON</p>
+            <p>See more -></p>
         </div>
         <div class="Content__module__separateur"></div>
       </div>
       <div class="Content__module -reverse">
         <div class="Content__module__separateur"></div>
-        <img src="../assets/img/homepage/custom.jpg"/>
+        <img src="../assets/img/homepage/sale.png"/>
         <div class="Content__module__desc -reverse">
-            <h2>Rico - Sofa</h2>
+            <h2>Era Chandelier</h2>
             <p>This product is offered to you on sale for a limited time. Enjoy it!</p>
-            <p>BOUTON</p>
+            <p>See more -></p>
         </div>
       </div>
     </div>
@@ -119,7 +119,7 @@ import Button1 from "../components/elements/Button.vue";
           and by helping each other leverage insights to learn and grow,
           we are all working towards a better tomorrow.
         </p>
-        <button>click</button>
+        <p>See more -></p>
       </div>
       
       
@@ -327,14 +327,13 @@ import Button1 from "../components/elements/Button.vue";
 }
 
 .ContentGlobal{
-  background-image: url(../assets/img/homepage/our_responsability.jpg);
+  background-image: url(../assets/img/homepage/Img_ecologie.png);
   width:100%;
   height:450px;
   margin-top:70px;
   margin-bottom:70px;
   color:white;
   text-align:center;
-  filter: brightness(50%);
  
 
   &__desc{
