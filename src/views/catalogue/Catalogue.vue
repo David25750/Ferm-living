@@ -1,59 +1,4 @@
-<!-- <script>
-export default {
-  data() {
-    return {
-      products: []
-    }
-  },
-  created() {
-    // Récupérer les produits depuis la base de données
-    axios.get('/api/products').then(response => {
-      this.products = response.data
-    })
-  }
-}
-</script>
-<template>
-  <div>
-    <h1>{{ product.name }}</h1>
-    <p>{{ product.price }}</p>
-    <p>{{ product.description }}</p>
-    <img :src="product.image" :alt="product.name">
-  </div>
-</template>
 
-<script>
-export default {
-  data() {
-    return {
-      product: {}
-    }
-  },
-  created() {
-    // Récupérer les informations du produit en fonction de l'ID
-    axios.get('/api/products/' + this.$route.params.id).then(response => {
-      this.product = response.data
-    })
-  }
-}
-</script>
-
-<template>
-    <div>
-      <div v-for="product in products" :key="product.id">
-        <h1>{{ product.name }}</h1>
-        <p>{{ product.price }}</p>
-        <p>{{ product.description }}</p>
-        <img :src="product.image" :alt="product.name">
-      </div>
-    </div>
-  </template>
-
-  <style lang="scss" scoped>
-</style>
-
-
- -->
 <script>
 import Card from '../../components/Card.vue';
 import ListCards from '../../components/ListCards.vue';
@@ -69,25 +14,11 @@ export default {
   data () {
     return {
       products: [],
-      // page: 0,
-      // byPage: 2,
-      // categories: []
+      isLoading: true,
     }
   },
-  // watch: {
-  //   categories: 'resetPage',
-  // },
-  computed: {
-  
-    // paginatedProducts () {
-    //   // page 0 // page 1 // page 2
-    //   // (0, 3) -> (3, 6) -> (6, 9)
-    //   return this.products.slice(this.page * this.byPage, (this.page + 1) * this.byPage)
-    // },
-    // pagesCount () {
-    //   return Math.ceil(this.products.length / this.byPage)
-    // }
-  },
+
+
   async mounted () {
     // Request products
     const productsResponse = await axios.get(import.meta.env.VITE_WP_API_URL + "/wc/v3/products", {
@@ -178,20 +109,5 @@ export default {
 
 }
 
-// .products-view {
-//   &__pagination {
-//     margin-top: 50px;
-//   }
-//   &__pagination-control {
-//     display: flex;
-//     flex-flow: row wrap;
-//     justify-content: space-between;
-//   }
-//   &__page-index {
-//     font-size: 18px;
-//     font-weight: 700;
-//     line-height: 24px;
-//     cursor: pointer;
-//   }
-// }
+
 </style>

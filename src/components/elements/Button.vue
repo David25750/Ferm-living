@@ -18,7 +18,8 @@ export default {
 
 .button{
         border:none;
-        width: 250px;
+        padding-right:20px;
+        padding-left:20px;
         padding-top: 10px;
         padding-bottom: 10px;
         font-family: $Content;

@@ -15,7 +15,7 @@ export default {
 </script>
 <template>
   <div class="list">
-    <Card v-for="item in this.items" :price="item.price" :title="item.name" :img="item.images[0].src" :id="item.id"></Card>
+    <Card v-for="item in this.items" :price="item.price" :title="item.name" :img="item.images[0].src" :id="item.id" :isCustomable="item.acf.iscustomable"></Card>
   </div>
 </template>
 

@@ -22,6 +22,7 @@ export default defineConfig({
           @import "@/scss/foundations/_functions.scss";
           @import "@/scss/foundations/_mixins.scss";
           @import "@/scss/foundations/_fonts.scss";
+          @import "@/scss/foundations/_main.scss";
         `,
       },
     },

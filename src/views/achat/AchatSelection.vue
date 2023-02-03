@@ -1,8 +1,10 @@
 <script>
-import CartProduct from "../../components/ProductCart.vue"
+import CartProduct from "../../components/ProductCart.vue";
+import Button1 from "../../components/elements/Button.vue";
 export default{
     components:{
         CartProduct,
+        Button1,
     },
 
     computed: {
@@ -40,7 +42,7 @@ export default{
             <p>Total : {{cartTotal}}$</p>
         </div>
         <router-link to="/achatCoordonnees">
-            <button class="section__button">Proceed to payment</button>
+            <Button1 :color="'grey'">Proceed to payment</Button1>
         </router-link>
 
     </div>

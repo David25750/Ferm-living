@@ -1,6 +1,12 @@
 <script>
+import Button1 from "./elements/Button.vue";
 
 export default{
+
+    components:{
+        Button1,
+    },
+
     props:{
         img:{
             type:String,
@@ -22,19 +28,25 @@ export default{
             default:null,
         },
 
+        isCustomable:{
+            type:Boolean,
+            default:false,
+        }
+
     }
 }
 </script>
 <template>
         <div class="card">
-            <button class="card__button" type="button">salut</button>
+            <button1 v-if="isCustomable" class="card__button" :color="'brown'" >
+                Customize
+            </button1>
+            <div v-else class="card__button"></div>
 
             <div class="card__item">
                 <a :href="`/produitDescription/${id}`">
                     <img :src="img" alt="produit" />
                 </a>
-                
-                <!--<button>Customize</button>-->
             </div>
             <div class="card__info">
                 <div class="card__info__desc">
@@ -62,6 +74,7 @@ export default{
 
     &__button{
         width:50%;
+        z-index:2;
     }
 
     &__item{

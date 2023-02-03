@@ -2,12 +2,14 @@
 import Card from "../../components/Card.vue";
 import ListCards from "../../components/ListCards.vue";
 import RandomProducts from "../../components/randomProduct.vue";
+import Button1 from "../../components/elements/Button.vue";
 import axios from 'axios'
     export default{
         components:{
             Card,
             ListCards,
             RandomProducts,
+            Button1,
         },
 
         data () {
@@ -46,7 +48,9 @@ import axios from 'axios'
 </script>
 
 <template>
-    <div v-if="this.isLoading"></div>
+    <div v-if="this.isLoading" class="loader">
+        <div class="custom-loader"></div>
+    </div>
     <div v-else class="sectionPrincipale">
         <button class="sectionPrincipale__button">fleche</button>
         <div class="sectionProduct">
@@ -70,10 +74,18 @@ import axios from 'axios'
                 </div>
                 
                 <div class="sectionProduct__right__buttons">
-                    <button>Customize</button>
+                    <div v-if="this.data.acf.iscustomable == true " class="sectionProduct__right__buttons">
+                    <button1 :color="'brown'">Customize</button1>
                     <router-link to="/achatSelection">
-                        <button @click="addToCart" >Add</button>
+                        <button1 @click="addToCart" :color="'grey'">Add</Button1>
                     </router-link>
+                </div>
+                <div v-else class="sectionProduct__right__buttons -modif">
+                    <router-link to="/achatSelection">
+                        <button1 @click="addToCart" :color="'grey'">Add</Button1>
+                    </router-link>
+                    
+                </div>
                     
                 </div>
             </div>
@@ -264,6 +276,13 @@ import axios from 'axios'
             padding-bottom:25%;
             display: flex;
             justify-content: space-between;
+            width:100%;
+            margin-top:10%;
+
+            &.-modif{
+                display:flex;
+                flex-direction: row-reverse;
+            }
         }
     }
 
